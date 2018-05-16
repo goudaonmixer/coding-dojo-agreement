@@ -1,0 +1,53 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport="true" [attr.role]="isHandset ? 'dialog' : 'navigation'" [mode]="(isHandset | async)!.matches ? 'over' : 'side'"
+    [opened]="!(isHandset | async)!.matches">
+    <mat-toolbar color="primary">Menu</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item href="https://mixer.com/Gouda/">Mixer Channel</a>
+      <a mat-list-item href="https://twitter.com/GoudaOnMixer/">Twitter</a>
+      <a mat-list-item href="https://github.com/goudaonmixer">GitHub</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()" *ngIf="(isHandset | async)!.matches">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>Hello!</span>
+    </mat-toolbar>
+    <mat-card>
+      <mat-card-title>The Agreement</mat-card-title>
+      <mat-card-content>
+        <p>I agree to Coding Dojo's Honor Code as stated in the Honor Code Agreement task of the Getting Started chapter of
+          the Pre-Bootcamp track.</p>
+      </mat-card-content>
+    </mat-card>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Neat, an expansion panel!
+        </mat-panel-title>
+        <mat-panel-description>
+          This isn't just a test, it's a SUPER FUN TEST!
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <mat-card>
+        <mat-card-title>TEST</mat-card-title>
+        <mat-card-content>
+          <h3>meow</h3>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis eos consequatur sapiente ipsum, impedit voluptas,
+            ea mollitia doloremque quibusdam quisquam deserunt explicabo ex maiores vitae asperiores nostrum! Ad, vel amet.</p>
+        </mat-card-content>
+      </mat-card>
+      <mat-card>
+        <mat-card-title>
+          <mat-checkbox></mat-checkbox> TODO:</mat-card-title>
+        <mat-card-content>
+          <p>Learn how to make idiomatic containers are cards so that I can have a card with a margin/padding around it like
+            this one does but the above one does not.</p>
+          <p>UPDATE: got it!</p>
+        </mat-card-content>
+      </mat-card>
+    </mat-expansion-panel>
+  </mat-sidenav-content>
+</mat-sidenav-container>
